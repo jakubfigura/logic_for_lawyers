@@ -1,0 +1,75 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[polish]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+
+\title{Zestaw 3}
+\author{Jakub Figura}
+\date{23 Listopada 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Zadania proste}
+Przeprowadź dowód założeniowy wprost.
+\begin{enumerate}
+    \item $(p\rightarrow (q \rightarrow r))\rightarrow (q\rightarrow (p\rightarrow r))   $
+    \item $(\neg p \vee r)\rightarrow (\neg r\rightarrow((q\rightarrow p)\rightarrow \neg q))$
+    \item $(p\rightarrow(q\rightarrow r))\rightarrow ((p\wedge q)\rightarrow r)$
+    \item $((p \wedge q)\rightarrow r)\rightarrow (p\rightarrow(q \rightarrow r))$
+\end{enumerate}
+
+\section*{Zadanie 1}
+Dla każdej z poniższych formuł przeprowadź dowód założeniowy wprost.
+
+\begin{enumerate}
+    \item $((p \to r) \land \neg(r \land \neg q)) \to (p \to q)$
+    
+    \item $(p \lor q) \to ((q \equiv r) \to (\neg r \to (p \land \neg q)))$
+    
+    \item $(((\neg p \land \neg q) \to (r \to s)) \land (\neg s \lor r)) \to (\neg(p \lor q) \to (r \equiv s))$
+    
+    \item $(p \to q) \to ((p \to (q \to r)) \to (p \to q))$
+    
+    \item $\neg(\neg p \lor q) \to ((p \to q) \to \neg((\neg p \lor s) \to \neg r))$
+    
+    \item $((p \equiv q) \lor \neg r) \to ((p \to r) \to (\neg(\neg p \lor s) \to q))$
+    
+    \item $(p \to \neg r) \to ((p \land \neg q) \to (r \to (\neg r \equiv s)))$
+    
+    \item $\neg((p \equiv r) \to (p \lor q)) \to ((\neg r \to (r \to s)) \to \neg(p \land \neg s))$
+    
+    \item $(\neg(p \equiv q) \lor r) \to (((r \equiv \neg q \land \neg(r \lor s))) \to \neg(p \lor s))$
+    
+    \item $\neg((\neg q \to r) \equiv p) \to ((\neg(q \lor p) \land (\neg s \to \neg r)) \to (\neg s \to (p \downarrow q)))$
+\end{enumerate}
+
+\section*{Zadanie 2}
+Dla każdej z poniższych formuł przeprowadź dowód założeniowy \textbf{nie wprost}
+
+\begin{enumerate}
+    \item $(p \to (p \to r)) \to ((q \to (r \land p)) \to (q \to r))$
+    
+    \item $((p \land q) \to r) \to (p \to (q \to r))$
+    
+    \item $((p \to q) \land (q \to r)) \to (p \to (p \land q))$
+    
+    \item $((p \to q) \lor (r \to s)) \to (\neg(p \to \neg r) \to \neg(q \to \neg s))$
+\end{enumerate}
+
+\end{document}
+
+

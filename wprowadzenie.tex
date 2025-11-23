@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[polish]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{e3.bib}
+
+\title{Wprowadzenie}
+\author{Jakub Figura}
+\date{Październik 2025}
+
+\begin{document}
+
+\maketitle
+\section*{Polecana literatura}
+\begin{enumerate}
+    \item Grabowski, A. (2004) \textit{Przewodnik do ćwiczeń z logiki dla studentów prawa i administracji.}
+    \item Gołba, F., Piękoś, P., Turkowski, P. (2012) \textit{Logika dla prawników. Wykłady. Ćwiczenia. Zadania.}
+\end{enumerate}
+\section{Podstawowa terminologia}
+\begin{enumerate}
+    \item Język - system znaków rządzący się regułami dotyczącmi łączenia znaków z myślami określonego typu oraz regułami wiązania znaków w wyrażenia złożone. 
+    \item Języki naturalne - języki powstałe w sposób spontaniczny, których reguły badają językoznawcy: np. polski, niemiecki, francuski itd.
+    \item Język sztuczny - język, którego reguły składniowe i znaczeniowe zostały stworzone świadomie przez językotwórcę.
+    \item Język formalny - język sztuczny o precyzyjnie zdefiniowanej składni i semantyce. 
+    \item Metajęzyk - język służący do opisu innego języka.
+\end{enumerate}
+\section{Wprowadzenie do KRZ}
+Klasyczny rachunek zdań - język formalny umożliwiający analizę poprawności rozumowań przeprowadzanych w języku naturalnym.\\
+Jest to rachunek zdań, czyli podstawową jednostką analizy są zdania w sensie logiki. Podczas zajęć będziemy omawiać jeszcze elementy rachunku nazw.\\
+Czym jest zdanie w sensie logiki? \textbf{Zdanie w sensie logiki} to wyrażone (najczęściej) w języku naturalnym zdanie oznajmujące, któremu możemy przypisać wartość logiczną prawdy albo wartość logiczną fałszu. Wyróżniamy zdania proste (atomowe) oraz zdania złożone.\\
+\textbf{Zdanie złożone} - to zdanie składające się ze zdań prostych połączonych spójnikiem. 
+Dlaczego rachunek klasyczny? O rachunku logicznym (logice) mówimy, że jest klasyczna, jeżeli spełnia następujące założenia:
+\begin{enumerate}
+    \item Dwuwartościwość - logika klasyczna opiera się na tzw. prawie wyłączonego środka, oznacza to, że każde zdanie jest prawdzwie lub fałszywe. Tertium non datur. 
+    \item Ekstensjonalność - wartość logiczna zdań złożonych jest zależna od wartości logicznej zdań prostych (atomowych) 
+\end{enumerate}
+\subsection{Składnia KRZ}
+\textbf{Alfabet KRZ}: 
+\begin{enumerate}
+    \item Zmienne zdaniowe: p, q, r, s, t,..., $p_1, p_2,p_3, ...$
+    \item Spójniki zdaniowe, czyli stałe logiczne (funktory zdaniotwórcze od argumentów zdaniowych): $\neg, \rightarrow, \vee, \wedge, \bot, \equiv, \downarrow, /$
+    \item Symbole pomocnicze: ), (
+\end{enumerate}
+\textbf{Wyrażenie KRZ} - każdy skończony ciąg złożony z symboli należących do alfabetu KRZ.\\
+\textbf{Formuła KRZ} - wyrażenie sensowne, czyli zbudowane zgodnie z następującymi regułami:
+\begin{enumerate}
+    \item Każda pojedyncza \textbf{zmienna zdaniowa} jest wyrażeniem sensownym. 
+    \item Jeżeli $\alpha, \ \beta$ są wyrażeniami sensownymi, to wyrażeniami sensownymi (formułami) są także: $\neg \alpha, \ (\alpha \rightarrow \beta),\  (\alpha \vee \beta),\  (\alpha \wedge \beta),\  (\alpha \bot \beta),\  (\alpha \equiv \beta),\  (\alpha \downarrow \beta), \ (\alpha / \beta)\footnote{\textbf{KOMENTARZ} O co chodzi z tymi greckimi literami? W przedstawionej definicji zastosowano notację wykorzystującą greckie litery $\alpha, \beta$. Litery te nie należą do alfabetu KRZ. Dlaczego pojawiają się w definicji? Są to oznaczenia tzw. metazmiennych. Pod pojęciem metazmiennej w logice rozumie się oznaczenie, które wskazuje, że w miejscu litery greckiej można podstawić dowolne (w szczególności złożone) zdanie. Przykładowo możemy w miejsce $\alpha = (p\wedge q),\  \beta = (q\downarrow r)$, wówczas formuła $\alpha \rightarrow\beta$ przyjmuje postać $(p\wedge q)\rightarrow (q\downarrow r)$.}$
+\end{enumerate}
+Zbiór wszystkich formuł KRZ oznaczany jest w logice grecką literą $\Sigma$.
+\subsection{Semantyka KRZ}
+Jak tłumaczymy spójniki z języka naturalnego na język KRZ?\\
+\begin{table}[!h]
+    \centering
+    \scalebox{0.75}{
+    \begin{tabular}{|C|C|C|}
+    \hline
+    \textbf{Nazwa spójnika} & \textbf{Oznaczenie w KRZ} & \textbf{Spójnik w języku naturalnym} \\ \hline
+    Negacja & $\neg, \sim$ & nieprawda, że...; ...nie...; nie jest tak, że...\\ \hline
+    Implikacja & $\rightarrow$ & jeżel..., to...; jeśli..., to...; ..., o ile...; ...gdy...; \\
+    \hline
+    Koniunkcja & $\wedge$ &i, oraz, lecz, ale, chociaż\\ \hline 
+    Alternatywa zwykła & $\vee$ & lub, albo, bądź\\ \hline 
+    Alternatywa rozłączna & $\bot$ & albo..., albo...; bądź..., bądź...;\\ \hline 
+    Równoważność & $\equiv, \iff$ & zawsze i tylko wtedy, gdy..., to...; wtedy i tylko wtedy, gdy..., to...;\\ \hline 
+    Binegacja & $\downarrow$ & ani nie..., ani nie...;\\ \hline
+    Dysjunkcja & $/$ & \textbf{NIE MA NA EGZAMINIE} albo..., albo..., albo żadne...\\ \hline
+    \end{tabular}}
+    \end{table}
+\newpage
+\subsection{Formalna definicja wartościowania}
+\onehalfspacing
+Wartościowaniem w KRZ nazywamy każdą funkcję $v:\Sigma \mapsto \{0, 1\}$, taką, że dla dowolnych formuł $\alpha, \beta\ \in \Sigma $:\\
+$v(\neg \alpha) = 1$ wtedy i tylko wtedy, gdy $v(\alpha) = 0$\\
+$v(\alpha \rightarrow \beta ) = 1$ wtedy i tylko wtedy, gdy $v(\alpha) = 0$ lub $v(\beta) = 1$\\
+$v(\alpha \wedge \beta ) = 1$ wtedy i tylko wtedy, gdy $v(\alpha) = 1$ i $v(\beta) = 1$\\
+$v(\alpha \vee \beta ) = 1$ wtedy i tylko wtedy, gdy $v(\alpha) = 1$ lub $v(\beta) = 1$\\
+$v(\alpha \downarrow \beta ) = 1$ wtedy i tylko wtedy, gdy $v(\alpha) = 0$ i $v(\beta) = 0$\\
+$v(\alpha / \beta ) = 0$ wtedy i tylko wtedy, gdy $v(\alpha) = 1$ i $v(\beta) = 1$\\
+$v(\alpha \equiv \beta ) = 1$ wtedy i tylko wtedy, gdy $v(\alpha) = 1$ i $v(\beta) = 1$ lub $v(\alpha) = 0$ i $v(\beta) = 0$\\
+$v(\alpha \bot \beta ) = 0$ wtedy i tylko wtedy, gdy $v(\alpha) = 1$ i $v(\beta) = 0$ lub $v(\alpha) = 0$ i $v(\beta) = 1$\\
+\\
+\textbf{W ujęciu nieformalnym jest to tabela, którą należy opanować na pamięć na następne zajęcia!}\\
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+       $\alpha$  & $\beta $ & $\neg \alpha$& $\alpha \rightarrow \beta $& $\alpha \wedge \beta$& $\alpha \vee \beta$ & $\alpha \downarrow \beta$& $\alpha / \beta$ & $\alpha \equiv \beta$& $\alpha \bot \beta $ \\ \hline
+       1  & 1& 0& 1& 1&1 &0 &0 &1 &0  \\
+       1  & 0& 0& 0& 0&1 &0 &1 &0 &1  \\
+       0  & 1& 1& 1& 0&1 &0 &1 &0 &1  \\
+       0  & 0& 1& 1& 0&0 &1 &1 &1 &0  \\
+    \hline
+    \end{tabular}
+\end{table}
+\end{document}

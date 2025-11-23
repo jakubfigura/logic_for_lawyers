@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[polish]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Zestaw 2}
+\author{Jakub Figura}
+\date{19 października 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Zadanie 1}
+Sprawdź metodą zerojedynkową skróconą, czy następująca formuła jest tautologią:
+\begin{enumerate}
+    \item $((p\rightarrow q)\wedge p)\rightarrow q$
+    \item $(p \rightarrow q) \rightarrow (\neg q \rightarrow \neg p)$
+    \item $(\neg p \vee q)\rightarrow (p\rightarrow q)$
+    \item $\neg(p \vee q) \rightarrow (\neg p \wedge \neg q)$
+    \item $\neg(p \wedge q) \rightarrow (\neg p \vee \neg q)$
+    \item $((p\rightarrow q) \wedge(q\rightarrow r)) \rightarrow (p \rightarrow q)$
+    \item $((p \rightarrow q) \wedge(r\rightarrow p))\rightarrow (p \vee q)$
+    \item $\neg(p\  \bot\  q) \rightarrow(p\  /\  q)$
+    \item $((p\ / q) \downarrow (r\rightarrow\neg p))\rightarrow(r\wedge q)$
+    \item $\neg((\neg p \downarrow q)\rightarrow(r \vee s))\rightarrow ((q \wedge s)\vee \neg p)$
+    \item $((r \wedge \neg q)\rightarrow(\neg r \equiv p))\rightarrow((r / \neg q)\vee (\neg r \downarrow p))$
+    \item $(((p / q ) \equiv r) \wedge ((r \downarrow q)\  / \ p))\rightarrow (((r\equiv p )\wedge q)\rightarrow p)$
+    \item $\neg(\neg(\neg p\ / \neg q)\rightarrow\neg(q \downarrow r))\rightarrow\neg(\neg(r\wedge p)\vee \neg q)$
+    \item $((p \downarrow q) \wedge \neg(\neg r \vee q))\rightarrow \neg((p \vee q)\bot r)$
+    \item $((p \equiv q) \rightarrow ( r\downarrow q)) \rightarrow (\neg(q\ /\ r)\rightarrow p )$    
+\end{enumerate}
+Uwaga! Jeżeli formuła nie jest tautologią podaj dla jakich wartości jest fałszywa. 
+\newpage
+\section*{Zadanie 2}
+Sprawdź metodą zerojedynkową skróconą, czy następująca formuła jest tautologią:
+\begin{enumerate}
+    \item $((p \ \bot \ q)\ /\ r)\rightarrow((r\equiv \neg q)\rightarrow\neg p)$
+    \item $((p \vee q)\ / \ (\neg p \rightarrow q))\rightarrow ((\neg p \rightarrow \neg q) \wedge (p \rightarrow \neg r))$
+    \item $((p \ / \neg q ) \wedge\neg(r\wedge \neg p))\rightarrow ((\neg q \vee r) \ / \neg (p \bot \neg r))$
+    \item $((p \vee \neg q)\bot (r \downarrow s))\rightarrow \neg ((q \rightarrow p) \equiv \neg (r \vee s))$
+    \item $\neg(\neg(p \downarrow\neg q)\rightarrow(r\equiv p))\rightarrow ((\neg p \vee r) \rightarrow(q \downarrow r))$
+\end{enumerate}
+\section*{Zadanie dodatkowe}
+Adam, Bartek i Czarek są podejrzani o uchylanie się od płacenia podatków. Składają następujące zeznania pod przysięgą:\\
+\\
+\textbf{Adam}: Bartek jest winny, a Czarek nie jest winny.\\ 
+\textbf{Bartek}: Jeżeli Adam jest winny, to winny jest też Czarek.\\
+\textbf{Czarek}: Nie jestem winny, ale przynajmniej jedna osoba z posotałych jest winna.\\
+\\
+Przyjmując, że zdanie p - oznacza „Adam jest winny'', q - „Bartek jest winny'', r - „Czarek jest winny'' odpowiedz na pytanie:\\
+Zakładając, że zeznania każdego są prawdziwe, kto jest winny?\footnote{Zadanie pochodzi z H. de Swart, \textit{Philosophical and Mathematical Logic}, Springer 2018, s. 60 - 61.} 
+\end{document}

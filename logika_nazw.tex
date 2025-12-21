@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[polish]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}% Required for inserting images
+
+\title{Zestaw 4}
+\author{Jakub Figura}
+\date{21 grudnia 2025}
+
+\begin{document}
+
+\maketitle
+\subsection*{1. Wprowadzenie}
+\begin{table}[h!]
+    \centering
+    \title{\textbf{Przekształcenia zdań kategorycznych}}\\
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Zdanie} & \textbf{Formalizacja}\\
+    \hline
+     Tylko S są P   & PaS\\
+    \hline
+     Tylko S nie są P  &S'aP\\
+    \hline
+    Tylko niektóre S są P & SiP$\wedge$SoP\\
+    Tylko niektóre S nie są P & SiP$\wedge$SoP\\
+    \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h!]
+    \centering
+    \title{\textbf{Operacja obwersji}}\\
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+     \textbf{Zdanie}    & XaY &XeY &XiY &XoY\\
+    \hline
+     \textbf{Obwersja}  &XeY' &XaY' &XoY' &XiY' \\
+    \hline
+    \end{tabular}
+\end{table}
+\begin{table}[h!]
+    \centering
+    \title{\textbf{Operacja konwersji}}\\
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+     \textbf{Zdanie}    & XaY &XeY &XiY &XoY\\
+    \hline
+     \textbf{Konwersja}  &YiX &YeX &YiX &brak \\
+    \hline
+    \end{tabular}
+\end{table}
+Kontrapozycja zupełna = O + K + O
+\subsection*{1. Kontrapozycja zupełna}
+Przeprowadź kontrapozycję zupełną następujących zdań:
+\begin{enumerate}
+    \item Każdy kwadrat jest prostokątem.
+    \item Żaden płaz nie jest ssakiem.
+    \item Niektóre ptaki nie są latające.
+    \item Niektóre liczby są pierwsze.
+\end{enumerate}
+\newpage
+\subsection*{2. Kwadrat logiczny}
+\begin{table}[h!]
+    \centering
+    \title{\textbf{Relacje w kwadracie logicznym}}\\
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Typ zdań} & \textbf{Relacja}\\
+    \hline
+     zdania ogólne  & przeciwieństwo\\
+    \hline
+     zdania szczegółowe  & podprzeciwieństwo\\
+    \hline
+    zdania ogólne i odpowiadające im jakością zdania szczegółowe & podporządkowanie\\
+    \hline
+    zdania ogólne i nieodpowiadające im jakością zdania szczegółowe & sprzeczność\\
+    \hline
+    \end{tabular}
+\end{table}
+\begin{enumerate}
+Przprowadź wnioskowanie z kwadratu logicznego przyjmując, że:
+    \item Fałszywe jest zdanie przeciwne do zdania: „Każdy kwadrat jest prostokątem”.
+    \item Przeprowadź wnioskowanie z kwadratu logicznego, przyjmując, że prawdziwe jest zdanie sprzeczne ze zdaniem: „Żaden pełnomocnik nie jest adwokatem”.
+    \item Fałszywe jest zdanie przeciwne do zdania: „Każda umowa sprzedaży jest umową odpłatną”.
+    \item Prawdziwe jest zdanie sprzeczne ze zdaniem: „Tylko prokuratorzy są oskarżycielami publicznymi”.
+    \item Prawdziwe jest zdanie: „Tylko niektóre akty prawne są ustawami”.
+    \item Fałszywe jest zdanie: „Tylko niektóre zbrodnie są czynami zabronionymi”.
+\end{enumerate}
+\subsection*{Sylogistyka}
+Przyjmując pierwszą przesłankę jako większą, wyprowadź wniosek z przesłanek. Jeżeli okaże się to niemożliwe, przyjmij, że druga przesłanka jest większa.
+\begin{enumerate}
+    \item Niektórzy artyści są rzeźbiarzami. Każdy rzeźbiarz jest twórcą.
+    \item Każdy lekarz ma wykształcenie. Żaden lekarz nie jest amatorem.
+    \item Niektórzy biegacze nie są maratończykami. Żaden maratończyk nie jest leniwy.
+    \item Niektórzy programiści pracują zdalnie. Niektórzy programiści nie znają języka C
+    \item Każdy matematyk jest wizjonerem. Niektórzy logicy nie są matematykami. 
+\end{enumerate}
+
+
+
+\end{document}

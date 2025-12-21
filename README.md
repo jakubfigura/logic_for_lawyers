@@ -11,3 +11,4 @@ Zestawy zadań:
 1. [Zestaw 1](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_1.pdf?raw=true)
 2. [Zestaw 2](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_2.pdf?raw=true)
 3. [Zestaw 3](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_3.pdf?raw=true)
+4. [Zestaw 4](https://github.com/jakubfigura/logic_for_lawyers/blob/main/Zestaw4.pdf?raw=true)

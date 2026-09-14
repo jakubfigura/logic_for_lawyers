@@ -13,4 +13,4 @@ Zestawy zadań:
 3. [Zestaw 3](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_3.pdf)
 4. [Zestaw 4](https://github.com/jakubfigura/logic_for_lawyers/blob/main/Zestaw4.pdf)
 <br/>
-Serdecznie polecam również zapoznanie się z [materiałami dydaktycznymi opracowanymi przez Andrzeja Porębskiego](https://jagiellonian.academia.edu/AndrzejPorebski/Teaching%20Documents).
+Serdecznie polecam zapoznanie się z materiałami dydaktycznymi opracowanymi przez [Andrzeja Porębskiego](https://jagiellonian.academia.edu/AndrzejPorebski/Teaching%20Documents)

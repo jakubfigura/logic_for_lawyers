@@ -1,4 +1,5 @@
 # Zadania z logiki dla prawników w roku akademickim 2025/2026
+## Autor: Jakub Figura
 
 Repozytorium zawiera zestawy zadań i przydatne materiały dydaktyczne do nauki przedmiotu logika dla prawników. <br/>
 

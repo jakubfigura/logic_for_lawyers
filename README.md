@@ -4,14 +4,14 @@
 Repozytorium zawiera zestawy zadań i przydatne materiały dydaktyczne do nauki przedmiotu logika dla prawników. <br/>
 
 Materiały:
-1. [Wprowadzenie do KRZ](https://github.com/jakubfigura/logic_for_lawyers/blob/main/cw_1_wprowadzenie_do_KRZ.pdf)
-2. [Dyrektywy](https://github.com/jakubfigura/logic_for_lawyers/blob/main/dyrektywy.pdf)
-3. [Dowodzenie twierdzeń](https://github.com/jakubfigura/logic_for_lawyers/blob/main/dowodzenie_twierdzen.pdf)
+1. [Wprowadzenie do KRZ](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/cw_1_wprowadzenie_do_KRZ.pdf)
+2. [Dyrektywy](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/dyrektywy.pdf)
+3. [Dowodzenie twierdzeń](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/dowodzenie_twierdzen.pdf)
 
 Zestawy zadań:
-1. [Zestaw 1](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_1.pdf)
-2. [Zestaw 2](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_2.pdf)
-3. [Zestaw 3](https://github.com/jakubfigura/logic_for_lawyers/blob/main/zestaw_3.pdf)
-4. [Zestaw 4](https://github.com/jakubfigura/logic_for_lawyers/blob/main/Zestaw4.pdf)
+1. [Zestaw 1](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_1.pdf)
+2. [Zestaw 2](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_2.pdf)
+3. [Zestaw 3](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_3.pdf)
+4. [Zestaw 4](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_4.pdf)
 <br/>
 Serdecznie polecam zapoznanie się z materiałami dydaktycznymi opracowanymi przez Andrzej Porębskiego, można je odszukać pod tym linkiem: https://jagiellonian.academia.edu/AndrzejPorebski/Teaching%20Documents

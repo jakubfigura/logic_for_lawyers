@@ -1,0 +1,464 @@
+\documentclass{beamer}
+
+% Wybór motywu (możesz zmienić na inny)
+\usetheme{Boadilla}
+\usecolortheme{default}
+
+% Pakiety
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage[polish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{logicproof}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Informacje o prezentacji
+\title{Dowodzenie twierdzeń}
+\subtitle{System założeniowy}
+\author{Jakub Figura}
+\date{\today}
+
+\begin{document}
+
+% Slajd tytułowy
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+% === SEKCJA 1 ===
+\section{Wprowadzenie}
+\begin{frame}{Wprowadzenie}
+Prezentacja przedstawia metodę dowodzenia twierdzeń za pomocą systemu reguł dedukcji naturalnej. Dowodzenie twierdzeń składa się z dwóch kroków. Pierwszy krok polega na wypisaniu przesłanek. Krok ten możliwy jest dzięki tzw. twierdzeniu o dedukcji. Jego treść nie jest wymagana na egzaminie, natomiast podaję ją, aby uzasadnić, dlaczego Państwo mogą „wrzucać'' poprzedniki implikacji do zbioru założeń. Drugi krok wymaga skutecznego stosowania reguł dedukcji naturalnej.
+    
+\end{frame}
+\begin{frame}{Wprowadzenie}
+\begin{block}{Twierdzenie o dedukcji}
+Jeżeli $\{\alpha_1, \alpha_2, \alpha_3,\dots, \alpha_n\} \vdash \beta$, to $\varnothing \vdash \alpha_1 \rightarrow (...(\alpha_n\rightarrow \beta)...)$
+\end{block}
+Twierdzenie pozwala nam „zabierać'' poprzedniki głównych implikacji~i~umieszczać w zbiorze przesłanek. Dzięki temu zamiast dowodzić całej implikacji możemy stosować do przesłanek reguły inferencyjne i wykazać, że zachodzi następnik. Dla przypomnienia symbol $\varnothing$ oznacza zbiór pusty. Gdyby nie twierdzenie~o dedukcji, musielibyśmy dowodzić twierdzeń o postaci złożonych implikacji i nasz system reguł nie byłby skuteczny. Gdy analizowaliśmy rachunek zdań w ujęciu semantycznym mówiliśmy o tautologiach, teraz będziemy mówić o tezach. Tyle teorii.
+
+\end{frame}
+\begin{frame}{Przykład 1}
+    \begin{block}{Teza (Prawo sylogizmu hipotetycznego)}
+    $(p\rightarrow q) \rightarrow((q \rightarrow r)\rightarrow(p\rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow q  & zał.
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład 1}
+    \begin{block}{Teza (Prawo sylogizmu hipotetycznego)}
+    $(p\rightarrow q) \rightarrow((q \rightarrow r)\rightarrow(p\rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow q  & zał. \\
+        q \rightarrow r  & zał.
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład 1}
+    \begin{block}{Teza (Prawo sylogizmu hipotetycznego)}
+    $(p\rightarrow q) \rightarrow((q \rightarrow r)\rightarrow(p\rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow q  & zał. \\
+        q \rightarrow r  & zał. \\
+        p & zał.
+    \end{logicproof}
+    \vspace{0.3cm}
+    Po wypisaniu wszystkich założeń musimy udowodnić, że zachodzi wniosek, korzystając z reguł inferencyjnych. Wnioskiem będzie w tym wypadku r. 
+\end{frame}
+\begin{frame}{Przykład 1}
+    \begin{block}{Teza (Prawo sylogizmu hipotetycznego)}
+    $(p\rightarrow q) \rightarrow((q \rightarrow r)\rightarrow(p\rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow q  & zał. \\
+        q \rightarrow r  & zał. \\
+        p & zał. \\
+        q & MPP 1, 3
+    \end{logicproof} 
+\end{frame}
+\begin{frame}{Przykład 1}
+    \begin{block}{Teza (Prawo sylogizmu hipotetycznego)}
+    $(p\rightarrow q) \rightarrow((q \rightarrow r)\rightarrow(p\rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow q  & zał. \\
+        q \rightarrow r  & zał. \\
+        p & zał. \\
+        q & MPP 1, 3\\
+        r & MPP 2, 4 
+    \end{logicproof}
+    \begin{center}
+        $\blacksquare$
+    \end{center}
+    \vspace{0.3cm}
+    Stosując dwukrotnie regułę MPP dochodzimy do r, co kończy dowód twierdzenia. 
+\end{frame}
+
+\begin{frame}{Przykład 2}
+    \begin{block}{Teza}
+        $(p \rightarrow (q \rightarrow r)) \rightarrow (q \rightarrow (p \rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow (q \rightarrow r) & założenie
+    \end{logicproof}
+Zwrócmy uwagę, że pierwsza przesłanka jest postaci $p \rightarrow (q \rightarrow r)$.
+\end{frame}
+\begin{frame}{Przykład 2}
+\begin{block}
+    $(p \rightarrow (q \rightarrow r)) \rightarrow (q \rightarrow (p \rightarrow r))$
+\end{block}
+
+    
+    \begin{logicproof}{2}
+        p \rightarrow (q \rightarrow r) & założenie \\
+        q & założenie
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład 2}
+\begin{block}
+    $(p \rightarrow (q \rightarrow r)) \rightarrow (q \rightarrow (p \rightarrow r))$
+\end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow (q \rightarrow r) & założenie \\
+        q & założenie \\
+        p & założenie
+    \end{logicproof}
+\end{frame}
+
+\begin{frame}{Przykład 2}
+\begin{block}
+    $(p \rightarrow (q \rightarrow r)) \rightarrow (q \rightarrow (p \rightarrow r))$
+\end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow (q \rightarrow r) & założenie \\
+        q & założenie \\
+        p & założenie
+    \end{logicproof}
+W ten sposób uzyskaliśmy komplet przesłanek. Możemy teraz zastosować znane nam reguły dowodzenia. Naszym celem jest wykazanie, że zachodzi r.
+\end{frame}
+\begin{frame}{Przykład 2}
+\begin{block}
+    $(p \rightarrow (q \rightarrow r)) \rightarrow (q \rightarrow (p \rightarrow r))$
+\end{block}  
+    \begin{logicproof}{2}
+        p \rightarrow (q \rightarrow r) & założenie \\
+        q & założenie \\
+        p & założenie\\
+        q\rightarrow r & MPP 1, 3
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład 2}
+    \begin{block}{Teza}
+        $(p \rightarrow (q \rightarrow r)) \rightarrow (q \rightarrow (p \rightarrow r))$
+    \end{block}
+    
+    \begin{logicproof}{2}
+        p \rightarrow (q \rightarrow r) & zał. \\
+        q & zał. \\
+        p & zał. \\
+        q \rightarrow r & MPP, 1, 3 \\
+        r & MPP, 4, 2
+    \end{logicproof}
+    \begin{center}
+        $\blacksquare$
+    \end{center}
+    \vspace{0.3cm}
+    Stosując dwukrotnie regułę MPP dochodzimy do r, co kończy dowód twierdzenia. 
+\end{frame}
+
+\begin{frame}{Przykład 3}
+Celem tego przykładu będzie zwrócenie uwagi na poprawne stosowanie reguł, które zawierają negacje.
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r\rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie
+    \end{logicproof}
+    \vspace{0.3cm}
+    Ponownie rozpoczynamy od identyfikacji przesłanek.
+\end{frame}
+\begin{frame}{Przykład 3}
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r\rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie\\
+    r & założenie
+    \end{logicproof}
+    \vspace{0.3cm}
+\end{frame}
+\begin{frame}{Przykład 3}
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r\rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie\\
+    r & założenie\\
+    q \rightarrow p & założenie
+    \end{logicproof}
+    \vspace{0.3cm}
+    Wnioskiem, który będziemy dowodzić jest \textbf{$\neg q$}
+\end{frame}
+\begin{frame}{Przykład 3}
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r \rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie\\
+    r & założenie\\
+    q \rightarrow p & założenie\\
+    
+    \end{logicproof}
+    \vspace{0.3cm}
+    Naturalnym ruchem byłoby zastosowanie reguły opuszczenia alternatywy, jak jednak zrobić to poprawnie? Przypomnijmy schemat reguły.
+\end{frame}
+\begin{frame}{Reguła opuszczenia alternatywy}
+    \begin{center}
+        \Large
+        \begin{tabular}{c}
+            $\alpha \lor \beta$ \\
+            $\neg \beta$ \\
+            \hline
+            $\alpha$
+        \end{tabular}
+        \quad (OA)
+    \end{center}
+W naszym przypadku mamy alternatywę $\neg p \vee \neg r$. Chcemy otrzymać $\neg p$, aby następnie zastosować MTT.
+\end{frame}
+\begin{frame}{Reguła opuszczenia alternatywy}
+Podstawiamy $\alpha = \neg p$ oraz $\beta = \neg r$. Nasza reguła wymaga, aby drugą przesłanką była formuła o postaci $\neg \beta$. Ponieważ $\beta = \neg r$, to $\neg \beta = \neg (\neg r) = \neg\neg r$. Nim przystąpimy do zastosowania OA musimy zastosować dołączenie podwójnej negacji, ponieważ w naszym zbiorze przesłanek nie ma $\neg \neg r$
+    \begin{center}
+        \Large
+        \begin{tabular}{c}
+            $\neg p \lor \neg r$ \\
+            $\neg \neg r$ \\
+            \hline
+            $\neg p$
+        \end{tabular}
+        \quad (OA)
+    \end{center}
+\end{frame}
+\begin{frame}{Przykład 3}
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r \rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie\\
+    r & założenie\\
+    q \rightarrow p & założenie\\
+    \neg \neg r & DN 2 \\
+    \end{logicproof}
+    \vspace{0.3cm}
+Po dołączeniu alternatywy w kroku 4 możemy zastosować OA korzystając z wiersza 1 i 4.
+
+\end{frame}
+\begin{frame}{Przykład 3}
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r \rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie\\
+    r & założenie\\
+    q \rightarrow p & założenie\\
+    \neg \neg r & DN 2 \\
+    \neg p & OA 1, 4 \\
+    
+    \end{logicproof}
+    \vspace{0.3cm}
+\end{frame}
+\begin{frame}{Przykład 3}
+    \begin{block}{Teza}
+        $(\neg p \vee \neg r)\rightarrow (r \rightarrow((q\rightarrow p)\rightarrow\neg q))$
+    \end{block}
+    \begin{logicproof}{2}
+    \neg p \vee \neg r & założenie\\
+    r & założenie\\
+    q \rightarrow p & założenie\\
+    \neg \neg r & DN 2 \\
+    \neg p & OA 1, 4 \\
+    \neg q & MTT 3, 5 
+    \end{logicproof}
+        \begin{center}
+        $\blacksquare$
+    \end{center}
+    \vspace{0.3cm}
+\end{frame}
+\begin{frame}{Przykład 4 \textit{ex contradictione quodlibet}}
+Rozważmy następującą tezę: 
+    \begin{block}{Teza}
+        $p \rightarrow(\neg p \rightarrow(q \downarrow r))$
+    \end{block}
+Wnioskiem, który musimy uzyskać jest formuła $q \downarrow r$. Jak jednak wiemy, zbiór reguł w naszym systemie nie zawiera reguł dotyczących binegacji. Jak zatem możemy sobie poradzić?
+\end{frame}
+\begin{frame}{Przykład 4 \textit{ex contradictione quodlibet}}
+    \begin{block}{Teza}
+        $p \rightarrow(\neg p \rightarrow(q \downarrow r))$
+    \end{block}
+Wypiszmy przesłanki. 
+    \begin{logicproof}{2}
+    p & założenie\\
+    \neg p & założenie
+    \end{logicproof}
+Nasz zbiór przesłanek zawiera parę formuł sprzecznych. Logika klasyczna opiera się na założeniu, że sprzeczność prowadzi nas do przepełeniania naszego systemu. Gdbyśmy zaczynali od sprzecznych aksjomatów, w naszym systemie moglibyśmy udowodnić wszystko. System taki staję się więc nieco bezużyteczny... My jendak wykorzystamy ten fakt, do udowodnienia naszej tezy. 
+\end{frame}
+\begin{frame}{Przykład 4 \textit{ex contradictione quodlibet}}
+    \begin{block}{Teza}
+        $p \rightarrow(\neg p \rightarrow(q \downarrow r))$
+    \end{block}
+W naszym dowodzie skorzystamy z faktu, że reguła dołączenia alternatywy pozwala nam dołączyć \textbf{dowolną} formułę jako drugi człon alternatywy!
+    \begin{center}
+        \Large
+        \begin{tabular}{c}
+            $\alpha$ \\
+            \hline
+            $\alpha \vee \beta$
+        \end{tabular}
+        \quad (DA)
+    \end{center}
+    \begin{logicproof}{2}
+    p & założenie\\
+    \neg p & założenie\\
+    p \vee (q \downarrow r) & DA 1
+    \end{logicproof}
+Zatem my dołączymy nasz wniosek! 
+\end{frame}
+\begin{frame}{Przykład 4 \textit{ex contradictione quodlibet}}
+    \begin{block}{Teza}
+        $p \rightarrow(\neg p \rightarrow(q \downarrow r))$
+    \end{block}
+Następnie wykorzystajmy ponownie znaną już regułę opuszczenia alternatywy (OA). 
+    \begin{center}
+   \begin{tabular}{c}
+            $\alpha \lor \beta$ \\
+            $\neg \beta$ \\
+            \hline
+            $\alpha$
+        \end{tabular}
+        \quad (OA)
+    \end{center}
+    \begin{logicproof}{2}
+    p & założenie\\
+    \neg p & założenie\\
+    p \vee (q \downarrow r) & DA 1\\
+    q \downarrow r & OA 3, 2
+    \end{logicproof}
+        \begin{center}
+        $\blacksquare$
+    \end{center}
+    \vspace{0.3cm}
+\end{frame}
+\begin{frame}{Dowodzenie nie wprost}
+\begin{block}{Twierdzenie o dedukcji nie wprost}
+Niech $\Gamma$ będzie zbiorem przesłanek. Wówczas jeżeli $\Gamma\ \cup \ \{\neg \beta\} \vdash \{\gamma, \neg \gamma\}$, to $\varnothing \vdash \alpha_1 \rightarrow (...(\alpha_n\rightarrow \beta)...)$
+\end{block}
+Przejdźmy teraz do dowodzenia metodą nie wprost. Początek dowodu będzie analogiczny tj. będziemy wypisywać przesłanki na podstawie twierdzenia o dedukcji wprost. W metodzie nie wprost skorzystamy również z drugiego twierdzenia tj. twierdzenia o dedukcji nie wprost. Twierdzenie to mówi nam, że jeżeli do naszego zbioru przesłanek dodamy zanegowany wniosek i w kolejnych krokach dowodu otrzymamy \textbf{dowolną} parę sprzecznych formuł, to wówczas udowodnimy naszą tezę. Treść twierdzenia jest naturalnie dla pogłębienia zainteresowania i nie jest wymagana na egzaminie. Musimy jendak wiedzieć, jak je stosować.
+\end{frame}
+\begin{frame}{Przykład dowodu nie wprost}
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    Standardowo rozpocznijmy od wypisania założeń.
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład dowodu nie wprost}
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    Standardowo rozpocznijmy od wypisania założeń.
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \neg r & założenie\\
+    
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład dowodu nie wprost}
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    Standardowo rozpocznijmy od wypisania założeń.
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \neg r & założenie\\
+    r \vee p & założenie \\
+    \end{logicproof}
+Gdy mamy komplet zalożeń korzystamy z twierdzenia o dedukcji nie wprost. Twierdzenie pozwala nam dodać do naszego zbioru przesłanek zanegowany wniosek, czyli w naszym wypadku $\neg q$
+\end{frame}
+\begin{frame}{Przykład dowodu nie wprost}
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    Standardowo rozpocznijmy od wypisania założeń.
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \neg r & założenie\\
+    r \vee p & założenie \\
+    \neg q & Z TDNW
+    \end{logicproof}
+Następnie dokonujemy wnioskowań z zastosowaniem reguł inferencyjnych. Pamiętając, że dowód kończy się w momencie, gdy natrafimy na parę zdań sprzecznych. 
+\end{frame}
+\begin{frame}{Przykład dowodu nie wprost}
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \neg r & założenie\\
+    r \vee p & założenie \\
+    \neg q & Z TDNW\\
+    \neg p & MTT 1, 4\\
+    \end{logicproof}
+\end{frame}
+\begin{frame}{Przykład dowodu nie wprost}
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \neg r & założenie\\
+    r \vee p & założenie \\
+    \neg q & Z TDNW \\
+    \neg p & MTT 1, 4\\
+    p & OA 3,2
+    \end{logicproof}
+        \begin{center}
+        Sprzeczność 5 i 6 $\blacksquare$
+    \end{center}
+\end{frame}
+\begin{frame}{Wprost i nie wprost}
+Oczywiście jeżeli daną tezę można udowodnić nie wprost, to również udowodnimy ją wprost. W niektórych przypadkach łatwiejszy będzie dowód wprost, w innych nie wprost. Na egzaminie w poleceniu zawsze będzie wskazane jaki rodzaj dowodu należy przeprowadzić. 
+    \begin{block}{Teza}
+        $(p\rightarrow q)\rightarrow(\neg r\rightarrow((r \vee p) \rightarrow q))$
+    \end{block}
+    \begin{logicproof}{2}
+    p \rightarrow q & założenie\\
+    \neg r & założenie\\
+    r \vee p & założenie \\
+    p & OA 3,2 \\
+    q & MPP 1, 4
+    \end{logicproof}
+        \begin{center}
+        $\blacksquare$
+    \end{center}
+
+\end{frame}
+\end{document}

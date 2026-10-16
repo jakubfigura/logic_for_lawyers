@@ -1,0 +1,345 @@
+\documentclass[12pt]{beamer}
+
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usetheme{Boadilla}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\title[Formalizacja]{Formalizacja wnioskowań w klasycznym rachunku zdań}
+\author{Jakub Figura}
+\date{Październik 2026}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%=================================================================
+% ZADANIE 1
+%=================================================================
+\begin{frame}{Zadanie 4.1}
+Jeżeli Jan jest komornikiem, to ukończył studia prawnicze. Ale Jan nie ukończył studiów prawniczych. A więc Jan nie jest komornikiem.
+\end{frame}
+
+\begin{frame}{Zadanie 4.1}
+\begin{enumerate}
+    \item[P1.] Jeżeli Jan jest komornikiem, to ukończył studia prawnicze.
+    \item[P2.] Ale Jan nie ukończył studiów prawniczych.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A więc Jan nie jest komornikiem.
+\end{frame}
+
+\begin{frame}{Zadanie 4.1 -- formalizacja}
+\textbf{Niech:} $p$ -- Jan jest komornikiem; $q$ -- Jan ukończył studia prawnicze.
+\vspace{10pt}
+\[ \big((p \rightarrow q) \wedge \neg q\big) \rightarrow \neg p \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 2
+%=================================================================
+\begin{frame}{Zadanie 4.2}
+\footnotesize
+Jeżeli stan wojenny obowiązuje i Sejm nie zebrał się na posiedzenie, to Prezydent na wniosek Rady Ministrów wydaje rozporządzenie z mocą ustawy. Stan wojenny obowiązuje, jeżeli doszło do zbrojnej napaści na terytorium RP lub istnieje zewnętrzne zagrożenie państwa. Zatem, jeżeli nie doszło do zbrojnej napaści na terytorium RP i nie istnieje zewnętrzne zagrożenie państwa, to jeżeli Prezydent na wniosek Rady Ministrów nie wydaje rozporządzenia z mocą ustawy, to Sejm zebrał się na posiedzenie.
+\end{frame}
+
+\begin{frame}{Zadanie 4.2}
+\footnotesize
+\begin{enumerate}
+    \item[P1.] Jeżeli stan wojenny obowiązuje i Sejm nie zebrał się na posiedzenie, to Prezydent na wniosek Rady Ministrów wydaje rozporządzenie z mocą ustawy.
+    \item[P2.] Stan wojenny obowiązuje, jeżeli doszło do zbrojnej napaści na terytorium RP lub istnieje zewnętrzne zagrożenie państwa.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} Jeżeli nie doszło do zbrojnej napaści na terytorium RP i nie istnieje zewnętrzne zagrożenie państwa, to jeżeli Prezydent na wniosek Rady Ministrów nie wydaje rozporządzenia z mocą ustawy, to Sejm zebrał się na posiedzenie.
+\end{frame}
+
+\begin{frame}{Zadanie 4.2}
+\small
+\textbf{Niech:} $p$ -- stan wojenny obowiązuje; $q$ -- Sejm zebrał się na posiedzenie; $r$ -- Prezydent wydaje rozporządzenie z mocą ustawy; $s$ -- doszło do zbrojnej napaści na RP; $t$ -- istnieje zewnętrzne zagrożenie państwa.
+\vspace{10pt}
+\[ \Big(\big((p \wedge \neg q) \rightarrow r\big) \wedge \big((s \vee t) \rightarrow p\big)\Big) \rightarrow \Big((\neg s \wedge \neg t) \rightarrow (\neg r \rightarrow q)\Big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 3
+%=================================================================
+\begin{frame}{Zadanie 4.3}
+Jeżeli odzież własna pracownika uległa zniszczeniu lub znacznemu zabrudzeniu, to pracodawca dostarczy pracownikowi nieodpłatnie odzież. A zatem, jeżeli pracodawca nie dostarcza pracownikowi nieodpłatnie odzieży, to nieprawda, że odzież własna pracownika uległa zniszczeniu i nieprawda, że odzież własna pracownika uległa zabrudzeniu.
+\end{frame}
+
+\begin{frame}{Zadanie 4.3}
+\begin{enumerate}
+    \item[P1.] Jeżeli odzież własna pracownika uległa zniszczeniu lub znacznemu zabrudzeniu, to pracodawca dostarczy pracownikowi nieodpłatnie odzież.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A zatem, jeżeli pracodawca nie dostarcza pracownikowi nieodpłatnie odzieży, to nieprawda, że odzież własna pracownika uległa zniszczeniu i nieprawda, że odzież własna pracownika uległa znacznemu zabrudzeniu.
+\end{frame}
+
+\begin{frame}{Zadanie 4.3}
+\textbf{Niech:} $p$ -- odzież uległa zniszczeniu; $q$ -- odzież uległa znacznemu zabrudzeniu; $r$ -- pracodawca dostarczy nieodpłatnie odzież.
+\vspace{10pt}
+\[ \big((p \vee q) \rightarrow r\big) \rightarrow \big(\neg r \rightarrow (\neg p \wedge \neg q)\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 4
+%=================================================================
+\begin{frame}{Zadanie 4.4}
+Jeżeli Karol jest komunistą, to jest członkiem Międzynarodówki. Nieprawda, że Karol strajkuje z robotnikami lub domaga się uspołecznienia środków produkcji. Zatem nieprawda, że Karol jest komunistą lub jest członkiem Międzynarodówki.
+\end{frame}
+
+\begin{frame}{Zadanie 4.4}
+\begin{enumerate}
+    \item[P1.] Jeżeli Karol jest komunistą, to jest członkiem Międzynarodówki.
+    \item[P2.] Nieprawda, że Karol strajkuje z robotnikami lub domaga się uspołecznienia środków produkcji.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} Zatem nieprawda, że Karol jest komunistą lub jest członkiem Międzynarodówki.
+\end{frame}
+
+\begin{frame}{Zadanie 4.4 -- formalizacja}
+\textbf{Niech:} $p$ -- jest komunistą; $q$ -- jest członkiem Międzynarodówki; $r$ -- strajkuje z robotnikami; $s$ -- domaga się uspołecznienia środków produkcji.
+\vspace{10pt}
+\[ \big((p \rightarrow q) \wedge \neg(r \vee s)\big) \rightarrow \neg(p \vee q) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 5
+%=================================================================
+\begin{frame}{Zadanie 4.5}
+Tylko jeżeli liczba jest podzielna przez 3, to jest podzielna przez 9. Liczba jest podzielna przez 9. Zatem liczba jest podzielna przez 3.
+\end{frame}
+
+\begin{frame}{Zadanie 4.5}
+\begin{enumerate}
+    \item[P1.] Tylko jeżeli liczba jest podzielna przez 3, to jest podzielna przez 9.
+    \item[P2.] Liczba jest podzielna przez 9.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} Zatem liczba jest podzielna przez 3.
+\end{frame}
+
+\begin{frame}{Zadanie 4.5 -- formalizacja}
+\textbf{Niech:} $p$ -- liczba jest podzielna przez 3; $q$ -- liczba jest podzielna przez 9.
+\vspace{10pt}
+\[ \big((q \rightarrow p) \wedge q\big) \rightarrow p \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 6
+%=================================================================
+\begin{frame}{Zadanie 4.6}
+Albo będę się pilnie uczył, albo nie zdam egzaminu z logiki. Jeżeli egzamin z logiki jest łatwy i nie będę się pilnie uczyć, to zdam egzamin z logiki. Zatem jeżeli egzamin z logiki nie jest łatwy, to jeżeli nie będę się pilnie uczył, to nie zdam egzaminu z logiki.
+\end{frame}
+
+\begin{frame}{Zadanie 4.6}
+\begin{enumerate}
+    \item[P1.] Albo będę się pilnie uczył, albo nie zdam egzaminu z logiki.
+    \item[P2.] Jeżeli egzamin z logiki jest łatwy i nie będę się pilnie uczyć, to zdam egzamin z logiki.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} Zatem jeżeli egzamin z logiki nie jest łatwy, to jeżeli nie będę się pilnie uczył, to nie zdam egzaminu z logiki.
+\end{frame}
+
+\begin{frame}{Zadanie 4.6 -- formalizacja}
+\textbf{Niech:} $p$ -- będę się pilnie uczył; $q$ -- zdam egzamin z logiki; $r$ -- egzamin z logiki jest łatwy.
+\vspace{10pt}
+\[ \Big((p \vee \neg q) \wedge \big((r \wedge \neg p) \rightarrow q\big)\Big) \rightarrow \big(\neg r \rightarrow (\neg p \rightarrow \neg q)\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 7
+%=================================================================
+\begin{frame}{Zadanie 4.7}
+Jeżeli Jan jest prokuratorem, to Jan nie jest posłem. Zawsze i tylko wtedy, gdy ani Jan nie jest prokuratorem ani Jan nie jest sędzią, to Jan jest posłem. A zatem jeżeli Jan jest posłem, to Jan nie jest sędzia i Jan nie jest prokuratorem.
+\end{frame}
+
+\begin{frame}{Zadanie 4.7}
+\begin{enumerate}
+    \item[P1.] Jeżeli Jan jest prokuratorem, to Jan nie jest posłem.
+    \item[P2.] Zawsze i tylko wtedy, gdy ani Jan nie jest prokuratorem, ani Jan nie jest sędzią, to Jan jest posłem.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A zatem jeżeli Jan jest posłem, to Jan nie jest sędzią i Jan nie jest prokuratorem.
+\end{frame}
+
+\begin{frame}{Zadanie 4.7 -- formalizacja}
+\textbf{Niech:} $p$ -- jest prokuratorem; $q$ -- jest posłem; $r$ -- jest sędzią.
+\vspace{10pt}
+\[ \Big((p \rightarrow \neg q) \wedge \big((p \downarrow r) \equiv q\big)\Big) \rightarrow \big(q \rightarrow (\neg r \wedge \neg p)\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 8
+%=================================================================
+\begin{frame}{Zadanie 4.8}
+Tylko jeżeli ani nie pada deszcz, ani nie jest pochmurnie, to Ania wybiera się w góry. Nieprawda, że zarazem Ania wybiera się w góry i jest pochmurnie. A zatem jeżeli pada deszcz i jest pochmurnie, to nieprawda, że Ania wybiera się w góry.
+\end{frame}
+
+\begin{frame}{Zadanie 4.8}
+\begin{enumerate}
+    \item[P1.] Tylko jeżeli ani nie pada deszcz, ani nie jest pochmurnie, to Ania wybiera się w góry.
+    \item[P2.] Nieprawda, że zarazem Ania wybiera się w góry i jest pochmurnie.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A zatem jeżeli pada deszcz i jest pochmurnie, to nieprawda, że Ania wybiera się w góry.
+\end{frame}
+
+\begin{frame}{Zadanie 4.8 -- formalizacja}
+\textbf{Niech:} $p$ -- pada deszcz; $q$ -- jest pochmurnie; $r$ -- Ania wybiera się w góry.
+\vspace{10pt}
+\[ \Big(\big(r \rightarrow (p \downarrow q)\big) \wedge \neg(r \wedge q)\Big) \rightarrow \big((p \wedge q) \rightarrow \neg r\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 9
+%=================================================================
+\begin{frame}{Zadanie 4.9}
+\footnotesize
+Jeżeli przepis szczególny nie stanowi inaczej, to termin przedawnienia wynosi sześć lat. Nieprawda, że jeżeli roszczenie dotyczy świadczeń okresowych lub roszczeń związanych z prowadzeniem działalności gospodarczej, to termin przedawnienia wynosi sześciu lat. A zatem, jeżeli roszczenie dotyczy świadczeń okresowych, to termin przedawnienia nie wynosi sześciu lat lub przepis szczególny nie stanowi inaczej.
+\end{frame}
+
+\begin{frame}{Zadanie 4.9}
+\footnotesize
+\begin{enumerate}
+    \item[P1.] Jeżeli przepis szczególny nie stanowi inaczej, to termin przedawnienia wynosi sześć lat.
+    \item[P2.] Nieprawda, że jeżeli roszczenie dotyczy świadczeń okresowych lub roszczeń związanych z prowadzeniem działalności gospodarczej, to termin przedawnienia wynosi sześciu lat.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A zatem, jeżeli roszczenie dotyczy świadczeń okresowych, to termin przedawnienia nie wynosi sześciu lat lub przepis szczególny nie stanowi inaczej.
+\end{frame}
+
+\begin{frame}{Zadanie 4.9}
+\small
+\textbf{Niech:} $p$ -- przepis szczególny stanowi inaczej; $q$ -- termin przedawnienia wynosi 6 lat; $r$ -- roszczenie dotyczy świadczeń okresowych; $s$ -- roszczenie związane z działalnością gospodarczą.
+\vspace{10pt}
+\[ \Big((\neg p \rightarrow q) \wedge \neg\big((r \vee s) \rightarrow q\big)\Big) \rightarrow \big(r \rightarrow (\neg q \vee \neg p)\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 10
+%=================================================================
+\begin{frame}{Zadanie 4.10}
+Albo matematyka jest odkrywana, albo jest tworzona. Jeżeli równania matematyczne antycypują wyniki eksperymentalne, to matematyka jest odkrywana lub równania są mądrzejsze niż ci, którzy je napisali. A zatem, jeżeli ani równania nie są mądrzejsze niż ci, którzy je napisali, ani równania matematyczne nie antycypują wyników eksperymentalnych, to nieprawda, że matematyka jest tworzona.
+\end{frame}
+
+\begin{frame}{Zadanie 4.10}
+\begin{enumerate}
+    \item[P1.] Albo matematyka jest odkrywana, albo jest tworzona.
+    \item[P2.] Jeżeli równania matematyczne antycypują wyniki eksperymentalne, to matematyka jest odkrywana lub równania są mądrzejsze niż ci, którzy je napisali.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A zatem, jeżeli ani równania nie są mądrzejsze niż ci, którzy je napisali, ani równania matematyczne nie antycypują wyników eksperymentalnych, to nieprawda, że matematyka jest tworzona.
+\end{frame}
+
+\begin{frame}{Zadanie 4.10 -- formalizacja}
+\textbf{Niech:} $p$ -- matematyka jest odkrywana; $q$ -- jest tworzona; $r$ -- równania antycypują wyniki eksperymentalne; $s$ -- równania są mądrzejsze niż ich autorzy.
+\vspace{10pt}
+\[ \Big((p \bot q) \wedge \big(r \rightarrow (p \vee s)\big)\Big) \rightarrow \big((s \downarrow r) \rightarrow \neg q\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 11
+%=================================================================
+\begin{frame}{Zadanie 4.11}
+Albo król Francji jest łysy, albo król Francji ma bujną czuprynę. Jeżeli król Francji nosi perukę, to król Francji ma bujną czuprynę. A zatem, jeżeli ani król Francji nie ma bujnej czupryny, ani król Francji nie pielęgnuje fryzury, to nieprawda, że król Francji nosi perukę.
+\end{frame}
+
+\begin{frame}{Zadanie 4.11}
+\begin{enumerate}
+    \item[P1.] Albo król Francji jest łysy, albo król Francji ma bujną czuprynę.
+    \item[P2.] Jeżeli król Francji nosi perukę, to król Francji ma bujną czuprynę.
+\end{enumerate}
+\vspace{6pt}
+\textbf{Wniosek:} A zatem, jeżeli ani król Francji nie ma bujnej czupryny, ani król Francji nie pielęgnuje fryzury, to nieprawda, że król Francji nosi perukę.
+\end{frame}
+
+\begin{frame}{Zadanie 4.11 -- formalizacja}
+\textbf{Niech:} $p$ -- jest łysy; $q$ -- ma bujną czuprynę; $r$ -- nosi perukę; $s$ -- pielęgnuje fryzurę.
+\vspace{10pt}
+\[ \big((p \bot q) \wedge (r \rightarrow q)\big) \rightarrow \big((q \downarrow s) \rightarrow \neg r\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 12
+%=================================================================
+\begin{frame}{Zadanie 4.12}
+\footnotesize
+Zawsze i tylko wtedy, gdy nieprawda, że jeżeli nie nasilają się animozje, to w społecznej świadomości pojawia się resentyment, to albo urzeczywistnia się mechanizm ucieczki od wolności, albo nie nasilają się animozje. Ani w społecznej świadomości nie pojawia się resentyment, ani nieprawda, że jednostki nie cechuje nonkonformizm. A zatem, jeżeli jednostki nie cechuje nonkonformizm i nasilają się animozje, to urzeczywistnia się mechanizm ucieczki od wolności.
+\end{frame}
+
+\begin{frame}{Zadanie 4.12}
+\footnotesize
+\begin{enumerate}
+    \item[P1.] Zawsze i tylko wtedy, gdy nieprawda, że jeżeli nie nasilają się animozje, to w społecznej świadomości pojawia się resentyment, to albo urzeczywistnia się mechanizm ucieczki od wolności, albo nie nasilają się animozje.
+    \item[P2.] Ani w społecznej świadomości nie pojawia się resentyment, ani nieprawda, że jednostki nie cechuje nonkonformizm.
+\end{enumerate}
+\vspace{4pt}
+\textbf{Wniosek:} A zatem, jeżeli jednostki nie cechuje nonkonformizm i nasilają się animozje, to urzeczywistnia się mechanizm ucieczki od wolności.
+\end{frame}
+
+\begin{frame}{Zadanie 4.12}
+\small
+\textbf{Niech:} $p$ -- nasilają się animozje; $q$ -- pojawia się resentyment; $r$ -- urzeczywistnia się mechanizm ucieczki od wolności; $s$ -- jednostki cechuje nonkonformizm.
+\vspace{10pt}
+\[ \Big(\big(\neg(\neg p \rightarrow q) \equiv (r \bot \neg p)\big) \wedge (q \downarrow \neg s)\Big) \rightarrow \big((\neg s \wedge p) \rightarrow r\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 13
+%=================================================================
+\begin{frame}{Zadanie 4.13}
+\footnotesize
+Albo jeżeli Ola nie odróżnia nocą grabów pospolitych od buków karbowanych, to Ola nie zna ekstensji nazw dendrologicznych, albo ani nieprawda, że Ola nie próżnowała w trakcie lekcji biologii, ani Ola nie odróżnia nocą grabów pospolitych od buków karbowanych. Zawsze i tylko wtedy, jeżeli albo Ola zna ekstensję nazw dendrologicznych, albo Ola próżnowała w trakcie lekcji biologii, to Ola jest ekspertką od wiązów. A zatem, jeżeli Ola jest ekspertką od wiązów i Ola nie próżnowała w trakcie lekcji biologii, to Ola odróżnia nocą garby pospolite od buków karbowanych.
+\end{frame}
+
+\begin{frame}{Zadanie 4.13}
+\footnotesize
+\begin{enumerate}
+    \item[P1.] Albo jeżeli Ola nie odróżnia nocą grabów pospolitych od buków karbowanych, to Ola nie zna ekstensji nazw dendrologicznych, albo ani nieprawda, że Ola nie próżnowała w trakcie lekcji biologii, ani Ola nie odróżnia nocą grabów pospolitych od buków karbowanych.
+    \item[P2.] Zawsze i tylko wtedy, jeżeli albo Ola zna ekstensję nazw dendrologicznych, albo Ola próżnowała w trakcie lekcji biologii, to Ola jest ekspertką od wiązów.
+\end{enumerate}
+\vspace{4pt}
+\textbf{Wniosek:} A zatem, jeżeli Ola jest ekspertką od wiązów i Ola nie próżnowała w trakcie lekcji biologii, to Ola odróżnia nocą graby pospolite od buków karbowanych.
+\end{frame}
+
+\begin{frame}{Zadanie 4.13}
+\small
+\textbf{Niech:} $p$ -- odróżnia nocą graby pospolite od buków karbowanych; $q$ -- zna ekstensję nazw dendrologicznych; $r$ -- próżnowała w trakcie lekcji biologii; $s$ -- jest ekspertką od wiązów.
+\vspace{10pt}
+\[ \Big(\big((\neg p \rightarrow \neg q) \bot (\neg r \downarrow p)\big) \wedge \big((q \bot r) \equiv s\big)\Big) \rightarrow \big((s \wedge \neg r) \rightarrow p\big) \]
+\end{frame}
+
+%=================================================================
+% ZADANIE 14
+%=================================================================
+\begin{frame}{Zadanie 4.14}
+\footnotesize
+Jeżeli nieprawda, że ani Kazimierz nie uznaje za wiedzę tylko poznania naukowego, ani Kazimierz nie uznaje przeżycia mistycznego za źródło wartościowej wiedzy, to nieprawda, że zawsze i tylko wtedy, gdy Kazimierz jest antyirracjonalistą, to Kazimierz uznaje przeżycie mistyczne za źródło wartościowej wiedzy. Kazimierz uznaje za wiedzę tylko poznanie naukowe. A zatem, jeżeli Kazimierz uznaje przeżycie mistyczne za źródło wartościowej wiedzy, to Kazimierz nie jest antyirracjonalistą.
+\end{frame}
+
+\begin{frame}{Zadanie 4.14}
+\footnotesize
+\begin{enumerate}
+    \item[P1.] Jeżeli nieprawda, że ani Kazimierz nie uznaje za wiedzę tylko poznania naukowego, ani Kazimierz nie uznaje przeżycia mistycznego za źródło wartościowej wiedzy, to nieprawda, że zawsze i tylko wtedy, gdy Kazimierz jest antyirracjonalistą, to Kazimierz uznaje przeżycie mistyczne za źródło wartościowej wiedzy.
+    \item[P2.] Kazimierz uznaje za wiedzę tylko poznanie naukowe.
+\end{enumerate}
+\vspace{4pt}
+\textbf{Wniosek:} A zatem, jeżeli Kazimierz uznaje przeżycie mistyczne za źródło wartościowej wiedzy, to Kazimierz nie jest antyirracjonalistą.
+\end{frame}
+
+\begin{frame}{Zadanie 4.14}
+\textbf{Niech:} $p$ -- uznaje za wiedzę tylko poznanie naukowe; $q$ -- uznaje przeżycie mistyczne za źródło wartościowej wiedzy; $r$ -- jest antyirracjonalistą.
+\vspace{10pt}
+\[ \Big(\big(\neg(p \downarrow q) \rightarrow \neg(r \equiv q)\big) \wedge p\Big) \rightarrow (q \rightarrow \neg r) \]
+\end{frame}
+
+\end{document}

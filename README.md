@@ -7,6 +7,7 @@ Materiały:
 1. [Wprowadzenie do KRZ](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/cw_1_wprowadzenie_do_KRZ.pdf)
 2. [Dyrektywy](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/dyrektywy.pdf)
 3. [Dowodzenie twierdzeń](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/dowodzenie_twierdzen.pdf)
+4. [Zadanie tekstowe](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_1_zadanie4_prezentacja.pdf)
 
 Zestawy zadań:
 1. [Zestaw 1](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_1.pdf)

@@ -8,6 +8,7 @@ Materiały:
 2. [Dyrektywy](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/dyrektywy.pdf)
 3. [Dowodzenie twierdzeń](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/dowodzenie_twierdzen.pdf)
 4. [Zadanie tekstowe](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_1_zadanie4_prezentacja.pdf)
+5. [Zadania tekstowe ułatwienia egzaminacyjne](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/bonus_zadania_tekstowe.pdf)
 
 Zestawy zadań:
 1. [Zestaw 1](https://github.com/jakubfigura/logic_for_lawyers/blob/main/pliki_do_pobrania/zestaw_1.pdf)
